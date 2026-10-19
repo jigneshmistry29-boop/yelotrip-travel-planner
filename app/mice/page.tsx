@@ -1,0 +1,103 @@
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'Corporate MICE Desk | YeloTrip',
+};
+
+export default function MicePage() {
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-900">
+      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+          <Link href="/" className="text-xl font-black text-slate-900">YeloTrip</Link>
+          <div className="flex gap-4 text-sm text-slate-600">
+            <Link href="/" className="hover:text-brand-600">Home</Link>
+            <Link href="/customer-care" className="hover:text-brand-600">Customer Care</Link>
+          </div>
+        </div>
+      </header>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-700">Corporate & MICE Desk</p>
+        <h1 className="mt-3 text-4xl font-black text-slate-900">Meetings, Incentives, Conferences & Exhibitions</h1>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+          YeloTrip - A Travel Planner supports corporate route planning, venue strategy, guest movement, and event logistics with clear SLA and GST-compliant options.
+        </p>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-black text-slate-900">RFP request</h2>
+          <form className="mt-6 grid gap-4 md:grid-cols-2">
+            <label className="space-y-2 text-sm font-medium text-slate-700">
+              <span>Company name</span>
+              <input className="w-full border border-slate-200 bg-slate-50 px-4 py-3" placeholder="Acme Pvt Ltd" />
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700">
+              <span>Contact person</span>
+              <input className="w-full border border-slate-200 bg-slate-50 px-4 py-3" placeholder="Operations lead" />
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700">
+              <span>Email</span>
+              <input type="email" className="w-full border border-slate-200 bg-slate-50 px-4 py-3" placeholder="team@company.com" />
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700">
+              <span>Phone</span>
+              <input className="w-full border border-slate-200 bg-slate-50 px-4 py-3" placeholder="+91 ...." />
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700 md:col-span-2">
+              <span>Event type</span>
+              <select className="w-full border border-slate-200 bg-slate-50 px-4 py-3">
+                <option>Meeting</option>
+                <option>Incentive</option>
+                <option>Conference</option>
+                <option>Exhibition</option>
+              </select>
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700 md:col-span-2">
+              <span>Proposed destination & dates</span>
+              <textarea className="min-h-[120px] w-full border border-slate-200 bg-slate-50 px-4 py-3" placeholder="Jaipur, 10-14 Jan 2027" />
+            </label>
+            <label className="space-y-2 text-sm font-medium text-slate-700 md:col-span-2">
+              <span>GST invoicing model</span>
+              <select className="w-full border border-slate-200 bg-slate-50 px-4 py-3">
+                <option>SAC 998559 (18% GST agency service fee model - ITC eligible)</option>
+                <option>SAC 998555 (5% GST bundled principal tour package)</option>
+              </select>
+            </label>
+            <label className="md:col-span-2 flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+              <input type="checkbox" className="mt-1 h-4 w-4 accent-brand-600" defaultChecked={false} />
+              <span>I consent to YeloTrip processing this corporate enquiry as per the DPDP Act 2023 and relevant compliance guidelines.</span>
+            </label>
+            <button type="submit" className="md:col-span-2 rounded-2xl bg-brand-600 px-6 py-3 text-base font-semibold text-white">Submit RFP</button>
+          </form>
+        </div>
+
+        <aside className="space-y-6">
+          <div className="rounded-[2rem] border border-slate-200 bg-slate-900 p-6 text-white shadow-soft">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-200">SLA</p>
+            <ul className="mt-6 space-y-4 text-sm text-slate-200">
+              <li>• 1 working day: brief acknowledgment</li>
+              <li>• 2-3 working days: itemized costed proposal</li>
+              <li>• Dedicated travel specialist with event coordination support</li>
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 className="text-xl font-black text-slate-900">Invoicing clarity</h3>
+            <div className="mt-5 space-y-4 text-sm text-slate-600">
+              <div className="rounded-2xl bg-brand-50 p-4">
+                <p className="font-bold text-brand-700">SAC 998559</p>
+                <p className="mt-2">18% GST agency service fee model — ITC eligible.</p>
+              </div>
+              <div className="rounded-2xl bg-amber-50 p-4">
+                <p className="font-bold text-amber-700">SAC 998555</p>
+                <p className="mt-2">5% GST bundled principal tour package model.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  );
+}
